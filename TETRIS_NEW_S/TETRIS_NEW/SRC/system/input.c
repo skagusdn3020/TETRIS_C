@@ -1,25 +1,50 @@
 #include <conio.h>
-typedef enum _arrow {up=11,left,right,down};
-void input() {
-	
-		int key=0, r_k = 0;
-		//r_k==누른 화살표
-		if (_kbhit()) {
-			key = _getch();
-			switch (key)
-			{
-			case 224:key = _getch();
-				switch (key)
-				{
-				case 72:return up;
-				case 75:return left;
-				case 77:return right;
-				case 80:return down;
-				default:
+#include <Windows.h>
+#include <process.h>
+#include <stdio.h>
+#include <time.h>
+//every 0.1sec input from kb [thread]
+unsigned int WINAPI kbin_th(int *key);
+typedef enum _arrow {up=11,left,right,down} arrow;
+void input(int* key) {
+	HANDLE H_KEY;
+	HANDLE ID_KEY;
+	H_KEY = (HANDLE)_beginthreadex(NULL, 0, kbin_th,key, 0, (unsigned*)&ID_KEY);
+}
+ 
+unsigned int WINAPI kbin_th(int* key) {
+		int temp_key;
+		time_t start, end;
+		double dif = 0;
+		while (1) {
+			time(&start);
+			while (1) {
+			
+				if (_kbhit()) {
+					temp_key = _getch();
+					switch (temp_key)
+					{
+					case 224:temp_key = _getch();
+						switch (temp_key)
+						{
+						case 72: printf("↑"); break;
+						case 75: printf("←"); break;
+						case 77: printf("→"); break;
+						case 80: printf("↓"); break;
+						default:
+							break;
+						}
+					default:
+						break;
+					}
+				}
+				time(&end);
+				dif=difftime(end, start);
+				if (dif < 0.1) {
+					end = 0; dif = 0;
 					break;
 				}
-			default:
-				break;
 			}
 		}
-	}
+		return 0;
+}

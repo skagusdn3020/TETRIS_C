@@ -5,21 +5,31 @@
 #include "../HEADER/system/update.h"
 #include "../HEADER/board.h"
 #include <stdio.h>
-void game_logic(void) { 
+void game_logic(void) {
+	typedef struct {
+		int key;
+		int* (*board)[12];
+		int* (*blockboard)[12];
+	}_Param;
+	_Param Param;
+	Param.key = 0;
 	init(board, 25, 0);	
-	input();
-	simul();
-	update();
-	render();
-	
+	input(Param.key);
+	while (1) {
+		simul();
+		update();
+		render();
+	}
+	return 0;
 
 }
 
 /* ~think flow~
-각기능별 구현 일단 블록이 생성되어 떨어지는 프로토타입 제작
+mission:build prototype
 init: reset
 input: input from keyboard
 simul: contect
 update: if success simul,update boards(board | blockbaord)
 render: rendering buffer
+master -> group Param array datas
 */
