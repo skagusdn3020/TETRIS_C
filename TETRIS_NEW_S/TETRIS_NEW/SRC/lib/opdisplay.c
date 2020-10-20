@@ -6,7 +6,7 @@
 #define debug 1
 void gotoxy(int x, int y) {
 	COORD Pos;
-	Pos.X = x*2;//공백은 2칸
+	Pos.X = x*2;//공백은 2칸(2칸기준 x축이동)
 	Pos.Y = y;
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 }

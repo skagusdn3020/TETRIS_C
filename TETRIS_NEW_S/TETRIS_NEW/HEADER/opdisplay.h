@@ -7,6 +7,6 @@ void info(int i, int j);
 void setcolor(unsigned short text,unsigned short back);
 //배경색전체설정
 void backcolor(unsigned short num);
-//Hide Cursor 1->Hide  0->display
+//Hide Cursor 0->Hide  1->display
 void CursorView(char show);
 
