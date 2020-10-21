@@ -1,2 +1,5 @@
-﻿  input.c
+﻿  game_system.c
+D:\@@@PROJECT@@@\TETRIS_C\TETRIS_NEW_S\TETRIS_NEW\SRC\game_system.c(26,17): warning C4047: '함수': 'int *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+D:\@@@PROJECT@@@\TETRIS_C\TETRIS_NEW_S\TETRIS_NEW\SRC\game_system.c(26,13): warning C4024: 'input': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
+D:\@@@PROJECT@@@\TETRIS_C\TETRIS_NEW_S\TETRIS_NEW\SRC\game_system.c(32,10): warning C4098: 'game_logic': 'void' 함수에서 값을 반환하고 있습니다.
   TETRIS_NEW.vcxproj -> D:\@@@PROJECT@@@\TETRIS_C\TETRIS_NEW_S\Debug\TETRIS_NEW.exe

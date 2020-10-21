@@ -6,13 +6,22 @@
 #include "../HEADER/board.h"
 #include <stdio.h>
 void game_logic(void) {
-	typedef struct {
+	typedef struct _Param{
 		int key;
-		int* (*board)[12];
-		int* (*blockboard)[12];
+		int (*board)[12];
+		int (*blockboard)[12];
 	}_Param;
-	_Param Param;
+	typedef struct _Buffer{
+		int(*frtbuf)[12];
+		int(*bckbuf)[12];
+	}_Buffer;
+	_Param Param;	
 	Param.key = 0;
+	Param.board = board;
+	Param.blockboard = blockboard;
+	_Buffer Buf;
+	Buf.frtbuf = scrbuffer;
+	Buf.bckbuf = backbuffer;
 	init(board, 25, 0);	
 	input(Param.key);
 	while (1) {
@@ -28,8 +37,9 @@ void game_logic(void) {
 mission:build prototype
 init: reset
 input: input from keyboard
-simul: contect
+simul: contact
 update: if success simul,update boards(board | blockbaord)
 render: rendering buffer
-master -> group Param array datas
+
+now -> build simul 
 */
