@@ -1,3 +1,3 @@
 #pragma once
-//thread develop branch
-void input(int* key);
+////every 0.1sec input from kb [thread]
+void input(void* structure);

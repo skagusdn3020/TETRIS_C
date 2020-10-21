@@ -7,7 +7,7 @@ void boardreset(int(*board)[12], int line, int resetvalue) {
 	}
 }
 void init(int(*board)[12], int line, int resetvalue) {
-	//fullscreen();
+	fullscreen();
 	info(0,3);
 	CursorView(0);
 	boardreset(board, line, resetvalue);

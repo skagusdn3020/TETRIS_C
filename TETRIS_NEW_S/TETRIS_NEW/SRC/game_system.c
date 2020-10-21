@@ -1,20 +1,16 @@
+#define check 1
 #include "../HEADER/system/init.h"
 #include "../HEADER/system/input.h"
 #include "../HEADER/system/render.h"
 #include "../HEADER/system/simulate.h"
 #include "../HEADER/system/update.h"
 #include "../HEADER/board.h"
+#include "../HEADER/system/structure.h"
+#if check
 #include <stdio.h>
+#endif
 void game_logic(void) {
-	typedef struct _Param{
-		int key;
-		int (*board)[12];
-		int (*blockboard)[12];
-	}_Param;
-	typedef struct _Buffer{
-		int(*frtbuf)[12];
-		int(*bckbuf)[12];
-	}_Buffer;
+	
 	_Param Param;	
 	Param.key = 0;
 	Param.board = board;
@@ -23,8 +19,20 @@ void game_logic(void) {
 	Buf.frtbuf = scrbuffer;
 	Buf.bckbuf = backbuffer;
 	init(board, 25, 0);	
-	input(Param.key);
+	input(&Param.key);
 	while (1) {
+		//check input (O)
+#if check
+		if (Param.key != 0) {
+			switch (Param.key) {
+			case 72: printf("ก่"); Param.key = 0; break;
+			case 75: printf("ก็"); Param.key = 0; break;
+			case 77: printf("กๆ"); Param.key = 0; break;
+			case 80: printf("ก้"); Param.key = 0; break;
+			default: break;
+			}
+		}
+#endif
 		simul();
 		update();
 		render();
@@ -41,5 +49,5 @@ simul: contact
 update: if success simul,update boards(board | blockbaord)
 render: rendering buffer
 
-now -> build simul 
+now -> build render thread 
 */

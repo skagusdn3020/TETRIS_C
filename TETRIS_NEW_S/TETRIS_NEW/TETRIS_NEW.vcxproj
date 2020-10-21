@@ -156,6 +156,7 @@
     <ClInclude Include="HEADER\system\input.h" />
     <ClInclude Include="HEADER\system\render.h" />
     <ClInclude Include="HEADER\system\simulate.h" />
+    <ClInclude Include="HEADER\system\structure.h" />
     <ClInclude Include="HEADER\system\update.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
