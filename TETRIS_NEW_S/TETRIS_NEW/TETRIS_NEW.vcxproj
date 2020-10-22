@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="SRC\game_system.c" />
+    <ClCompile Include="SRC\lib\buffer.c" />
     <ClCompile Include="SRC\lib\opdisplay.c" />
     <ClCompile Include="SRC\main.c" />
     <ClCompile Include="SRC\system\init.c" />
@@ -152,6 +153,7 @@
     <ClInclude Include="HEADER\board.h" />
     <ClInclude Include="HEADER\game_system.h" />
     <ClInclude Include="HEADER\opdisplay.h" />
+    <ClInclude Include="HEADER\system\buffer.h" />
     <ClInclude Include="HEADER\system\init.h" />
     <ClInclude Include="HEADER\system\input.h" />
     <ClInclude Include="HEADER\system\render.h" />

@@ -6,6 +6,7 @@
 #include "../HEADER/system/update.h"
 #include "../HEADER/board.h"
 #include "../HEADER/system/structure.h"
+#include "../HEADER/system/buffer.h"
 #if checkinput
 #include <stdio.h>
 #endif
@@ -49,5 +50,7 @@ simul: contact
 update: if success simul,update boards(board | blockbaord)
 render: rendering buffer
 
-now -> build render thread 
+now ->buffer.h ~double buffering~
+	  build render thread 
+	   
 */

@@ -2,8 +2,7 @@
 //20*10 array,+ side and bottom add void sell for impact cheak
 int board[25][12] = { 0, };
 int blockboard[25][12] = { 0, };
-int scrbuffer[25][12]={ 0, };
-int backbuffer[25][12] = { 0, };
+
 int block[7][4][4][4] = {
 	/*M_I*/{
 		/*0¸é*/{
