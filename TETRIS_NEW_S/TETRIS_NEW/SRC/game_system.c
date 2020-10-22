@@ -1,4 +1,4 @@
-#define check 1
+#define checkinput 0
 #include "../HEADER/system/init.h"
 #include "../HEADER/system/input.h"
 #include "../HEADER/system/render.h"
@@ -6,7 +6,7 @@
 #include "../HEADER/system/update.h"
 #include "../HEADER/board.h"
 #include "../HEADER/system/structure.h"
-#if check
+#if checkinput
 #include <stdio.h>
 #endif
 void game_logic(void) {
@@ -22,7 +22,7 @@ void game_logic(void) {
 	input(&Param.key);
 	while (1) {
 		//check input (O)
-#if check
+#if checkinput
 		if (Param.key != 0) {
 			switch (Param.key) {
 			case 72: printf("ก่"); Param.key = 0; break;
