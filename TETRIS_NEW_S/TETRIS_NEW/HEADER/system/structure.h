@@ -1,4 +1,5 @@
 #pragma once
+#include <Windows.h>
 typedef struct _Param {
 	int key;
 	int(*board)[12];
@@ -7,4 +8,5 @@ typedef struct _Param {
 typedef struct _Buffer {
 	int(*frtbuf)[12];
 	int(*bckbuf)[12];
+	COORD position;
 }_Buffer;

@@ -1,2 +1,2 @@
 #pragma once
-void simul();
+void simul(void* _Params);

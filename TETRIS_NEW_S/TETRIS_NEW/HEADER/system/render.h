@@ -1,2 +1,2 @@
 #pragma once
-void render();
+void render(void* Buff);

@@ -7,6 +7,7 @@
 #include "../HEADER/board.h"
 #include "../HEADER/system/structure.h"
 #include "../HEADER/system/buffer.h"
+#include <Windows.h>
 #if checkinput
 #include <stdio.h>
 #endif
@@ -16,11 +17,13 @@ void game_logic(void) {
 	Param.key = 0;
 	Param.board = board;
 	Param.blockboard = blockboard;
-	_Buffer Buf;
-	Buf.frtbuf = scrbuffer;
-	Buf.bckbuf = backbuffer;
-	init(board, 25, 0);	
+	_Buffer Buff;
+	Buff.frtbuf = scrbuffer;
+	Buff.bckbuf = backbuffer;
+	init(board, 25, 0);
 	input(&Param.key);
+	//title
+	render(&Buff);
 	while (1) {
 		//check input (O)
 #if checkinput
@@ -34,9 +37,9 @@ void game_logic(void) {
 			}
 		}
 #endif
-		simul();
-		update();
-		render();
+		simul(&Param);
+		update(&Param,&Buff);
+		render(&Buff);
 	}
 	return 0;
 
@@ -50,7 +53,7 @@ simul: contact
 update: if success simul,update boards(board | blockbaord)
 render: rendering buffer
 
-now ->buffer.h ~double buffering~
+now ->build simul()
+	  buffer.h ~double buffering~
 	  build render thread 
-	   
 */
