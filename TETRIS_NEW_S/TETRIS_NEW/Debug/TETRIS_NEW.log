@@ -1,3 +1,10 @@
 ﻿  game_system.c
-D:\@@@PROJECT@@@\TETRIS_C\TETRIS_NEW_S\TETRIS_NEW\SRC\game_system.c(44,10): warning C4098: 'game_logic': 'void' 함수에서 값을 반환하고 있습니다.
+D:\@@@PROJECT@@@\TETRIS_C\TETRIS_NEW_S\TETRIS_NEW\SRC\game_system.c(54,10): warning C4098: 'game_logic': 'void' 함수에서 값을 반환하고 있습니다.
+  input.c
+  render.c
+D:\@@@PROJECT@@@\TETRIS_C\TETRIS_NEW_S\TETRIS_NEW\SRC\system\render.c(7,9): warning C4101: 'H_RENDER' :참조되지 않은 지역 변수입니다.
+  simulate.c
+  update.c
+  코드를 생성하고 있습니다...
+D:\@@@PROJECT@@@\TETRIS_C\TETRIS_NEW_S\TETRIS_NEW\SRC\system\render.c(16): warning C4716: 'render_th': 값을 반환해야 합니다.
   TETRIS_NEW.vcxproj -> D:\@@@PROJECT@@@\TETRIS_C\TETRIS_NEW_S\Debug\TETRIS_NEW.exe

@@ -1,10 +1,12 @@
 #pragma once
 #include <Windows.h>
+//key,board,blockboard
 typedef struct _Param {
 	int key;
 	int(*board)[12];
 	int(*blockboard)[12];
 }_Param;
+//frtbuf,bckbuf,position{x,y}
 typedef struct _Buffer {
 	int(*frtbuf)[12];
 	int(*bckbuf)[12];

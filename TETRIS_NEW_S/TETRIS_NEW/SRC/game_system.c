@@ -12,7 +12,17 @@
 #include <stdio.h>
 #endif
 void game_logic(void) {
-	
+	typedef struct _Arr_list {
+		int(*board)[12];
+		int(*blockboard)[12];
+		int(*frtbuffer)[12];
+		int(*bckbuffer)[12];
+	}_Arr_list;
+	_Arr_list Arr_list;
+	Arr_list.board = board;
+	Arr_list.blockboard = blockboard;
+	Arr_list.frtbuffer = scrbuffer;
+	Arr_list.bckbuffer = backbuffer;
 	_Param Param;	
 	Param.key = 0;
 	Param.board = board;
@@ -29,11 +39,11 @@ void game_logic(void) {
 #if checkinput
 		if (Param.key != 0) {
 			switch (Param.key) {
-			case 72: printf("ก่"); Param.key = 0; break;
-			case 75: printf("ก็"); Param.key = 0; break;
-			case 77: printf("กๆ"); Param.key = 0; break;
-			case 80: printf("ก้"); Param.key = 0; break;
-			default: break;
+			case 72: printf("ก่ "); Param.key = 0; break;
+			case 75: printf("ก็ "); Param.key = 0; break;
+			case 77: printf("กๆ "); Param.key = 0; break;
+			case 80: printf("ก้ "); Param.key = 0; break;
+			default: printf("%d ", Param.key); Param.key = 0; break;
 			}
 		}
 #endif
@@ -54,6 +64,5 @@ update: if success simul,update boards(board | blockbaord)
 render: rendering buffer
 
 now ->build simul()
-	  buffer.h ~double buffering~
 	  build render thread 
 */
