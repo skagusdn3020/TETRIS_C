@@ -1,5 +1,9 @@
 #include "../../HEADER/system/structure.h"
 #include "../../HEADER/system/simulate_sub/simulate_sub.h"
+#include <stdio.h>
+#include <stdbool.h>
+#include <time.h>
+#define key_test 1
 //  MINO
 //	M_I=0
 //	M_O=1
@@ -178,5 +182,37 @@ int block[7][4][4][4] = {
 };//end
 void simul(void* _Params) {
 	_Param* Param = (_Param*)_Params;
-	
+#if key_test
+	if (Param->key != 0) {
+		switch (Param->key) {
+		case 72: printf("ก่ "); Param->key = 0; break;
+		case 75: printf("ก็ "); Param->key = 0; break;
+		case 77: printf("กๆ "); Param->key = 0; break;
+		case 80: printf("ก้ "); Param->key = 0; break;
+		default: printf("%d ", Param->key); Param->key = 0; break;
+		}
+	}
+#endif
+	time_t start, end;		//} for dropdown timer
+	double dif;				//}
+	static bool now_mino_live=false;
+	static int nowmino_Y = 0;
+	static bool nowimpact = false;
+	static list_cnt = 6;
+	static mino_list[7] = { 0,1,2,3,4,5,6 };
+	// mino table is last *and* turn end (now_mino_live == false)
+
+	if (now_mino_live == false) {
+
+	}
+	if (list_cnt == 6 && now_mino_live == false) {
+		shupple(mino_list);
+		list_cnt = 0;
+	}
 }
+
+/* ~think flow~
+loop in 1.sec,Param->key base change boards
+now -> 
+	  
+*/

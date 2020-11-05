@@ -142,6 +142,7 @@
     <ClCompile Include="SRC\game_system.c" />
     <ClCompile Include="SRC\lib\buffer.c" />
     <ClCompile Include="SRC\lib\opdisplay.c" />
+    <ClCompile Include="SRC\lib\simulate_sub.c" />
     <ClCompile Include="SRC\main.c" />
     <ClCompile Include="SRC\system\init.c" />
     <ClCompile Include="SRC\system\input.c" />

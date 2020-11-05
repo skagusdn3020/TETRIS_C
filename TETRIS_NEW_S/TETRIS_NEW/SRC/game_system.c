@@ -8,16 +8,12 @@
 #include "../HEADER/system/structure.h"
 #include "../HEADER/system/buffer.h"
 #include <Windows.h>
+#include <stdbool.h>
 #if checkinput
 #include <stdio.h>
 #endif
 void game_logic(void) {
-	typedef struct _Arr_list {
-		int(*board)[12];
-		int(*blockboard)[12];
-		int(*frtbuffer)[12];
-		int(*bckbuffer)[12];
-	}_Arr_list;
+	
 	_Arr_list Arr_list;
 	Arr_list.board = board;
 	Arr_list.blockboard = blockboard;
@@ -30,13 +26,14 @@ void game_logic(void) {
 	_Buffer Buff;
 	Buff.frtbuf = scrbuffer;
 	Buff.bckbuf = backbuffer;
-	init(board, 25, 0);
+	bool endflag = false; //gameover flag
+	init(&Arr_list, 25, 0);
 	input(&Param.key);
 	//title
 	render(&Buff);
 	while (1) {
-		//check input (O)
 #if checkinput
+		//check input (O)
 		if (Param.key != 0) {
 			switch (Param.key) {
 			case 72: printf("ก่ "); Param.key = 0; break;
@@ -51,7 +48,7 @@ void game_logic(void) {
 		update(&Param,&Buff);
 		render(&Buff);
 	}
-	return 0;
+	
 
 }
 

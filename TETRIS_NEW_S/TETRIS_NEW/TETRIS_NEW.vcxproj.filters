@@ -42,6 +42,9 @@
     <ClCompile Include="SRC\lib\buffer.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="SRC\lib\simulate_sub.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HEADER\opdisplay.h">

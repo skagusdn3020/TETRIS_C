@@ -12,3 +12,9 @@ typedef struct _Buffer {
 	int(*bckbuf)[12];
 	COORD position;
 }_Buffer;
+typedef struct _Arr_list {
+	int(*board)[12];
+	int(*blockboard)[12];
+	int(*frtbuffer)[12];
+	int(*bckbuffer)[12];
+}_Arr_list; //all arr's pointer
