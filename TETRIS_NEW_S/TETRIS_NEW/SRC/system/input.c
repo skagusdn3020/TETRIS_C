@@ -6,7 +6,7 @@
 #include "../../HEADER/system/structure.h"
 //every 0.1sec input from kb [thread]
 unsigned int WINAPI kbin_th(_Param* structure);
-typedef enum _arrow {up=72,left=75,right=77,down=80} arrow;
+
 void input(void* structure) {
 	HANDLE H_KEY;
 	HANDLE ID_KEY;

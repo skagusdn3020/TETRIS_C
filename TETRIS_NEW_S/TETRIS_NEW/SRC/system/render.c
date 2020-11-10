@@ -1,4 +1,5 @@
 #include "../../HEADER/system/structure.h"
+#include "../../HEADER/system/buffer.h"
 #include <Windows.h>
 #include <process.h>
 //double buffer rendering

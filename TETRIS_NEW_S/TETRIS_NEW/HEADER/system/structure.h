@@ -1,5 +1,6 @@
 #pragma once
 #include <Windows.h>
+typedef enum _arrow { up = 72, left = 75, right = 77, down = 80 } arrow;
 //key,board,blockboard
 typedef struct _Param {
 	int key;

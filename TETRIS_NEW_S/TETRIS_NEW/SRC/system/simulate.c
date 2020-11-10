@@ -4,6 +4,9 @@
 #include <stdbool.h>
 #include <time.h>
 #define key_test 1
+#define yes true
+#define no false
+#define speed 1 //dropdown speed
 //  MINO
 //	M_I=0
 //	M_O=1
@@ -193,22 +196,34 @@ void simul(void* _Params) {
 		}
 	}
 #endif
-	time_t start, end;		//} for dropdown timer
-	double dif;				//}
-	static bool now_mino_live=false;
+	static time_t start=2, end=4;		//} for dropdown timer
+	static double dif;				//}
+	static bool now_mino_live=no;
 	static int nowmino_Y = 0;
-	static bool nowimpact = false;
+	static bool nowimpact = no;
 	static list_cnt = 6;
 	static mino_list[7] = { 0,1,2,3,4,5,6 };
-	// mino table is last *and* turn end (now_mino_live == false)
-
-	if (now_mino_live == false) {
-
+	dif=difftime(end, start);
+	//check nosedive
+	if (Param->key==down && now_mino_live==yes) {
+		nosedive(Param->board, Param->blockboard);
+		return;
 	}
-	if (list_cnt == 6 && now_mino_live == false) {
+		if (dif>=speed)
+	{ 
+		time(&start);/*time*/
+		//push mino
+	}
+	
+	if (now_mino_live == false) {
+		//spawn mino
+	}
+	// mino table is last *and* turn end (now_mino_live == false)
+	if (list_cnt == 6 && now_mino_live == false && nowimpact==yes) {
 		shupple(mino_list);
 		list_cnt = 0;
 	}
+	time(&end);/*time*/
 }
 
 /* ~think flow~
