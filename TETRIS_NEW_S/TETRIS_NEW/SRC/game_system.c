@@ -1,4 +1,5 @@
 #define checkinput 0
+#define checkboard 0
 #include "../HEADER/system/init.h"
 #include "../HEADER/system/input.h"
 #include "../HEADER/system/render.h"
@@ -9,11 +10,14 @@
 #include "../HEADER/system/buffer.h"
 #include <Windows.h>
 #include <stdbool.h>
+#if checkboard
+#include <stdio.h>
+#endif
 #if checkinput
 #include <stdio.h>
 #endif
 void game_logic(void) {
-	
+	system("title ¢ÃTETRIS¢Ã");
 	_Arr_list Arr_list;
 	Arr_list.board = board;
 	Arr_list.blockboard = blockboard;
@@ -27,12 +31,13 @@ void game_logic(void) {
 	Buff.frtbuf = scrbuffer;
 	Buff.bckbuf = backbuffer;
 	bool endflag = false; //gameover flag
-	init(&Arr_list, 25, 0);
+	init(&Arr_list, 24, 0);
 	input(&Param.key);
 	//title
 	render(&Buff);
+
 	while (1) {
-#if checkinput
+		#if checkinput
 		//check input (O)
 		if (Param.key != 0) {
 			switch (Param.key) {
@@ -43,10 +48,29 @@ void game_logic(void) {
 			default: printf("%d ", Param.key); Param.key = 0; break;
 			}
 		}
-#endif
+		#endif
+		#if checkboard
+		boardreset(Param.board, 24, 0);
+		system("cls");
+		for (int i = 0; i < 12; i++)
+			printf("¢Ã");
+		printf("\n");
+		for (int i = 0; i < 25; i++) {
+			for (int j = 0; j < 12; j++) {
+				switch (Param.board[i][j]) {
+				case 0:printf("  "); break;
+				case 1:printf("¡á"); break;
+				case 2:printf("¢Ã"); break;
+				}
+			}
+			printf("\n");
+		}
+		#endif
 		simul(&Param);
 		update(&Param,&Buff);
 		render(&Buff);
+		
+
 	}
 	
 

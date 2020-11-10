@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <stdio.h>
-#define debug 1
+#define debug 0
 void gotoxy(int x, int y) {
 	COORD Pos;
 	Pos.X = x*2;//공백은 2칸(2칸기준 x축이동)
@@ -12,11 +12,8 @@ void gotoxy(int x, int y) {
 }
 void fullscreen() {
 	
-#if debug
+#if debug !=1
 	SetConsoleDisplayMode(GetStdHandle(STD_OUTPUT_HANDLE), CONSOLE_FULLSCREEN_MODE,0);
-#endif
-#if debug!=1
-	system("mode con cols=240 lines=62");
 #endif
 }
 void setcolor(unsigned short text, unsigned short back) {

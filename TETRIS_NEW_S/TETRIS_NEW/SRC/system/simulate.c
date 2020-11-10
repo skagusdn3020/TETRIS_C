@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <time.h>
-#define key_test 1
+#define key_test 0
 #define yes true
 #define no false
 #define speed 1 //dropdown speed

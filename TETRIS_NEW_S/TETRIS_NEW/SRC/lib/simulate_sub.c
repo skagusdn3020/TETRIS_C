@@ -16,19 +16,20 @@ void shupple(int* table) {
 		*(table + temp_2) = v_temp;
 	}
 }
+//this function is not tested
 void interboard(int(*board)[12], int(*blockboard)[12]) {
 	int col, row;
-	for (col = 0; col < 10; col++)
-		for (row = 24; row >= 0; row--) {
-			//working...
+	for (col = 1; col < 11; col++)
+		for (row = 0; row <24; row++) {
+			board[row][col] = blockboard[row][col];
 		}
-	boardreset(blockboard, 25, 0);
+	boardreset(blockboard, 24, 0);
 }
 
 int nosedive(int(*board)[12], int(*blockboard)[12]) {
 	int impact = no;
-	//working...
-	
+	//working... pushboard()...
+	interboard(board, blockboard);
 	return 1;
 }
 void pushboard(int(*boards)[12]) {

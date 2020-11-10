@@ -1,5 +1,6 @@
 #include "../../HEADER/system/structure.h"
 #include "../../HEADER/system/buffer.h"
+#include "../../HEADER/opdisplay.h"
 #include <Windows.h>
 #include <process.h>
 //double buffer rendering
@@ -12,6 +13,5 @@ void render(void* Buff) {
 
 unsigned int WINAPI render_th(_Buffer* buff) {
 	static HANDLE buffer[2];
-
 
 } 

@@ -1,8 +1,9 @@
 #include "../../HEADER/opdisplay.h"
 #include "../../HEADER/system/structure.h"
 void boardreset(int(*board)[12], int line, int resetvalue) {
-	for (int col = 1; col < 11; col++){
-		for (int row = 0; row < line; row++) {
+	int col, row;
+	for (col = 1; col < 11; col++){
+		for (row = 0; row < line; row++) {
 			board[row][col] = 0;
 		}
 	}
