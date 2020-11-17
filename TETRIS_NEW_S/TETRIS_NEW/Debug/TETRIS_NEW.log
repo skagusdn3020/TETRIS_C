@@ -1,2 +1,5 @@
-﻿  init.c
+﻿  game_system.c
+  simulate_sub.c
+D:\@@@PROJECT@@@\TETRIS_C\TETRIS_NEW_S\TETRIS_NEW\SRC\lib\simulate_sub.c(7,18): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
   TETRIS_NEW.vcxproj -> D:\@@@PROJECT@@@\TETRIS_C\TETRIS_NEW_S\Debug\TETRIS_NEW.exe

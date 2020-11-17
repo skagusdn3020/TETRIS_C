@@ -1,5 +1,5 @@
 #pragma once
-//20*10 array,+ side and bottom add void sell for impact cheak
+//20*10 array,+ side and bottom add void cells for impact cheak
 static int board[25][12] = { 2,0,0,0,0,0,0,0,0,0,0,2,
 							 2,0,0,0,0,0,0,0,0,0,0,2,
 							 2,0,0,0,0,0,0,0,0,0,0,2,
@@ -26,8 +26,7 @@ static int board[25][12] = { 2,0,0,0,0,0,0,0,0,0,0,2,
 							 2,0,0,0,0,0,0,0,0,0,0,2,
 							 2,2,2,2,2,2,2,2,2,2,2,2 };
 
-static int blockboard[25][12] = 
-						   { 2,0,0,0,0,0,0,0,0,0,0,2,
+static int blockboard[25][12]= { 2,0,0,0,0,0,0,0,0,0,0,2,
 							 2,0,0,0,0,0,0,0,0,0,0,2,
 							 2,0,0,0,0,0,0,0,0,0,0,2,
 							 2,0,0,0,0,0,0,0,0,0,0,2,
