@@ -1,5 +1,6 @@
-#define checkinput 0
-#define checkboard 0
+#define test_input 0
+#define test_board 0 //printf boards
+#define test_pushboard 1
 #include "../HEADER/system/init.h"
 #include "../HEADER/system/input.h"
 #include "../HEADER/system/render.h"
@@ -10,10 +11,7 @@
 #include "../HEADER/system/buffer.h"
 #include <Windows.h>
 #include <stdbool.h>
-#if checkboard
-#include <stdio.h>
-#endif
-#if checkinput
+#if test_board || test_pushboard || test_input
 #include <stdio.h>
 #endif
 void game_logic(void) {
@@ -37,7 +35,7 @@ void game_logic(void) {
 	render(&Buff);
 
 	while (1) {
-		#if checkinput
+		#if test_input
 		//check input (O)
 		if (Param.key != 0) {
 			switch (Param.key) {
@@ -49,7 +47,7 @@ void game_logic(void) {
 			}
 		}
 		#endif
-		#if checkboard
+		#if test_board
 		boardreset(Param.board, 24, 0);
 		system("cls");
 		for (int i = 0; i < 12; i++)
@@ -72,7 +70,6 @@ void game_logic(void) {
 		
 
 	}
-	
 
 }
 

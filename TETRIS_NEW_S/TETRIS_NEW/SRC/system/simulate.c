@@ -197,10 +197,10 @@ void simul(void* _Params) {
 	}
 #endif
 	static time_t start=2, end=4;		//} for dropdown timer
-	static double dif;				//}
+	static double dif;					//}
 	static bool now_mino_live=no;
-	static int nowmino_Y = 0;
 	static bool nowimpact = no;
+	static int nowmino_Y = 0;
 	static list_cnt = 6;
 	static mino_list[7] = { 0,1,2,3,4,5,6 };
 	dif=difftime(end, start);

@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "../../HEADER/system/init.h"
+#include "../../HEADER/board_con.h"
 #define yes 1
 #define no 0
 void shupple(int* table) {
@@ -17,21 +18,35 @@ void shupple(int* table) {
 	}
 }
 //this function is not tested
-void interboard(int(*board)[12], int(*blockboard)[12]) {
+void mergeboard(int(*board)[12], int(*blockboard)[12]) {
 	int col, row;
-	for (col = 1; col < 11; col++)
-		for (row = 0; row <24; row++) {
+	for (row = row_e; row >= row_s; row--) {
+		for (col = col_s; col <= col_s; col++) {
 			board[row][col] = blockboard[row][col];
 		}
+	}
 	boardreset(blockboard, 24, 0);
 }
 
 int nosedive(int(*board)[12], int(*blockboard)[12]) {
 	int impact = no;
 	//working... pushboard()...
-	interboard(board, blockboard);
+	mergeboard(board, blockboard);
 	return 1;
 }
-void pushboard(int(*boards)[12]) {
-	
+void pushboard(int(*board)[12]) {
+	int col, row;
+	for (row = row_e; row > row_s; row--) {
+		for (col = col_s; col <= col_s; col++) {
+			board[row][col] = board[row - 1][col];
+		}
+	}
+	//reset first line 0
+	int temp;
+	for (temp = col_s; temp <= col_e; temp++) {
+		board[0][temp] = 0;
+	}
+}
+int checkimpact(int(*board)[12], int(*blockboard)[12]) {
+
 }

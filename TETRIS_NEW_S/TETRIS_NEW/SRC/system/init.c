@@ -1,10 +1,11 @@
 #include "../../HEADER/opdisplay.h"
 #include "../../HEADER/system/structure.h"
+#include "../../HEADER/board_con.h"
 void boardreset(int(*board)[12], int line, int resetvalue) {
 	int col, row;
-	for (col = 1; col < 11; col++){
-		for (row = 0; row < line; row++) {
-			board[row][col] = 0;
+	for (row = row_e; row >= row_s; row--) {
+		for (col = col_s; col <= col_s; col++) {
+			board[row][col] = resetvalue;
 		}
 	}
 }
